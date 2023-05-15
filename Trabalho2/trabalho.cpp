@@ -3,8 +3,16 @@
 
 using namespace std;
 
+//caracteristicas da flor
+struct flores
+{
+float petal_Lenght;
+float petal_Width;
+string variety;
+}; flores flor;
+
 //leitura do arquivo csv
-void ler_Exel()
+void ler_Excel()
 {
     ifstream ler("iris_petalas.csv");
 
@@ -16,29 +24,21 @@ void ler_Exel()
 }
 
 //leitura do valor k
-void recebe_k()
+void recebe_k(int* pk)
 {
-    int k;
-    cout << "quantas vezes voce deseja realizar a verificacao? " << endl;
-    cin >> k;
-    if(k <= 0)
+    if(*(pk) <= 0)
     {
-        cout << "numero invalido, deseja tentar novamente? S/N " << endl;
-        char SN;
-        char S = S;
-        cin >> SN;
-        if(SN == S)
-        {
-            
-             recebe_k();
-        }else{
-            return;
-        }
+        cout << "numero invalido, tente novamente. " << endl;
+        return;
+
     }
 }
 
 int main()
 {
 
-recebe_k();
+    int k;
+    cout << "quantas vezes voce deseja realizar a verificacao? " << endl;
+    cin >> k;
+    recebe_k(&k);
 }
