@@ -5,21 +5,27 @@
 
 using namespace std;
 
+const int MAX_LENGHT = 150;
+const int MAX_WIDTH = 150;
+const int MAX_VARIETY = 150;
+
 //caracteristicas da flor
-struct flower
+struct Flower
 {
 
 float lenght;
 float width;
 string variety;
 
-}; flower petal;
+}; 
 
 
 
 //leitura do arquivo csv
 void ler_Excel()
 {
+
+Flower petal;
 
 ifstream inputFile;
 inputFile.open("iris_petalas.csv");
@@ -32,19 +38,19 @@ while (getline(inputFile, line))
     string variety;
     string tempString; // ler double
 
-    stringstream inputString(line); // cria um stream fora da linha
+     stringstream inputString(line); // cria um stream fora da linha
 
-    getline(inputString, variety), ',';
-
-    
-    getline(inputString, tempString, ',');
-    width = atoi(tempString.c_str()); // atoi é uma função utilizada para converter variáveis em strings, necessário para usar o getline no width (que é um double).
+     getline(inputString, variety), ',';
 
     
-    getline(inputString, tempString);
-    length = atof(tempString.c_str()); // convertendo length em string.
+     getline(inputString, tempString, ',');
+     width = atoi(tempString.c_str()); // atoi é uma função utilizada para converter variáveis em strings, necessário para usar o getline no width (que é um double).
 
-    line = "";
+    
+     getline(inputString, tempString);
+     length = atof(tempString.c_str()); // convertendo length em string.
+
+     line = "";
 }
 }
 
