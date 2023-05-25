@@ -76,7 +76,8 @@ int recebeK()
 
 float calcularDistancia()
 {
-    //calcula a distância euclidiana entre a altura e largura da flor selecionada aleatoriamente, o número de flores aleatórias depende de k
+    //calcula a distância euclidiana entre a altura e largura da flor selecionada aleatoriamente e os atribui em variáveis, o número de flores aleatórias depende de k
+    //a distância euclidiana vai ser usada para classificar a flor conforme o ponto médio calculado a seguir
 }
 
 Flower selecionarRepresentanteAleatorio(Flower flowers[], int numFlowers)
@@ -94,13 +95,31 @@ void criaGrupos(Flower flowers[], int numFlowers, int k, float threshold)
     }
 }
 
+void ponto_Medio()
+{
+    //o ponto médio, será a soma dos atributos numéricos de uma flor com os atributos numéricos de outra flor dividido por dois
+    //será usado para classificar a flor conforme o grupo criado no resultado
+}
+
 void resultado()
 {
     ofstream file("resultado.csv");
     while(!file.eof())
     {
         //cria um arquivo csv que retorna 4 colunas a primeira = grupo o qual a flor pertence, segunda = altura da flor, terceira = largura da flor e ultima a espécie.
+
     }
+}
+
+void atualiza_Flor()
+{
+    //atualiza os representantes contidos no resultado
+    //trunca o arquivo de texto "resultado" e muda seus valores
+}
+
+void repete()
+{
+    //atualiza as flores x vezes
 }
 
 int main()
